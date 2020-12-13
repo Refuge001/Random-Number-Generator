@@ -87,7 +87,7 @@ var pwNumeric = "";
 
 var userChoice = "";
 
-var password = "";
+var password = [];
 
 function generatePassword() {
   var pwLength = prompt(
@@ -153,11 +153,10 @@ function generatePassword() {
   //loop section
   for (var i = 0; i < pwLength; i++) {
     //looping through functions (not sure how to do yet), and then saves value to password var
-    var loopCycle = userChoice;
-    password = userChoice; //not going to work.
+    password.push(userChoice);
   };
   console.log(userChoice);
-  console.log(loopCycle);
+  console.log(password);
 }; //end of generatePassword function
 
 //Functions for maths
