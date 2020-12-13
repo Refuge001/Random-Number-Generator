@@ -76,8 +76,16 @@ const pwSpecialArr = [
   "{",
   "]",
   "}",
+  "\\",
+  "\|",
+  "\:",
+  "\;",
+  "\,",
+  "\<",
+  "\.",
+  "\>",
+  "\?"
 ];
-//, "\", "|", ":", ";", ",", "<", ".", ">", "?"]
 const pwNumericArr = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 
 var pwLowerCase = "";
@@ -85,9 +93,7 @@ var pwUpperCase = "";
 var pwSpecial = "";
 var pwNumeric = "";
 
-var passInput = "";
-
-var password = [];
+var passwordInput = [];
 
 function generatePassword() {
   var pwLength = prompt(
@@ -109,56 +115,50 @@ function generatePassword() {
   //loop section
   for (var i = 0; i < pwLength; i) {
     if (pwLowerCase === true) {
-      password += (lowerCase());
+      passwordInput += (lowerCase());
       i++;
     }
     if (pwUpperCase === true) {
-      password += (upperCase());
+      passwordInput += (upperCase());
       i++;
     }
     if (pwNumeric === true) {
-      password += (numericCase());
+      passwordInput += (numericCase());
       i++;
     }
     if (pwSpecial === true) {
-      password += (symbolCase());
+      passwordInput += (symbolCase());
       i++;
     }
   }
-  console.log(password);
 
 }; //end of generatePassword function
 
 //Functions for maths
 function upperCase() {
   var singleChar = pwLettersUpperArr[Math.floor(Math.random() * pwLettersUpperArr.length)];
-  console.log(singleChar)
   return singleChar;
 }
 
 function lowerCase() {
   var singleChar = pwLettersArr[Math.floor(Math.random() * pwLettersArr.length)];
-  console.log(singleChar)
   return singleChar;
 }
 
 function symbolCase() {
   var singleChar = pwSpecialArr[Math.floor(Math.random() * pwSpecialArr.length)];
-  console.log(singleChar)
   return singleChar;
 }
 
 function numericCase() {
   var singleChar = pwNumericArr[Math.floor(Math.random() * pwNumericArr.length)];
-  console.log(singleChar)
   return singleChar;
 }
 // Write password to the #password input ***** must implement generatePassword function
 function writePassword() {
-  var password = generatePassword();
+  generatePassword();
   var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
+  passwordText.value = passwordInput;
   return;
 }
 
