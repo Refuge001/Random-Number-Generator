@@ -64,11 +64,11 @@ if (pwLength < 8 || pwLength > 128) {
 };
 
 //What happens when you confirm these cases?
-if (pwLowerCase && pwUpperCase && pwSpecial && pwNumeric === false) {
+if ((pwLowerCase && pwUpperCase && pwSpecial && pwNumeric) == false) {
   alert("At least one character type should be selected.");
 }
 
-else if (pwLowerCase === true) {
+if (pwLowerCase === true) {
   alert("LowerCase true")
 }
 
