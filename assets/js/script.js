@@ -52,8 +52,8 @@ var pwSpecial = [
 ];
 //, "\", "|", ":", ";", ",", "<", ".", ">", "?"]
 
-var pwLength = prompt(
-  "How many characters do you want? (At least 8 characters and no more than 128 characters)");
+var pwLength = prompt("How many characters do you want? (At least 8 characters and no more than 128 characters)");
+
 if (pwLength < 8 || pwLength > 128) {
   alert("You didn't select the proper range of characters");
 } else {
@@ -64,8 +64,12 @@ if (pwLength < 8 || pwLength > 128) {
 };
 
 //What happens when you confirm these cases?
-if (pwLowerCase === true) {
+if (pwLowerCase && pwUpperCase && pwSpecial && pwNumeric === false) {
+  alert("At least one character type should be selected.");
+}
 
+else if (pwLowerCase === true) {
+  alert("LowerCase true")
 }
 
 if (pwUpperCase === true) {
@@ -80,7 +84,7 @@ if (pwNumeric === true) {
 
 }
 
-// ...
+// ... 2
 
 if (pwLowerCase && pwUpperCase === true) {
 
@@ -105,7 +109,9 @@ if (pwUpperCase && pwNumeric === true) {
 if (pwSpecial && pwNumeric === true) {
 
 }
-// ...
+
+// ... 3
+
 if (pwLowerCase && pwUpperCase && pwSpecial === true) {
 
 }
@@ -121,7 +127,9 @@ if (pwLowerCase && pwNumeric && pwSpecial == true) {
 if (pwUpperCase && pwSpecial && pwNumeric === true) {
 
 }
-// ...
+
+// ... all
+
 if (pwUpperCase && pwSpecial && pwNumeric && pwLowerCase === true) {
 
 }
