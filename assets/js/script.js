@@ -60,9 +60,71 @@ if (pwLength < 8 || pwLength > 128) {
   var pwLowerCase = confirm("Do you want lowercase characters?");
   var pwUpperCase = confirm("Do you want uppercase characters?");
   var pwSpecial = confirm("Do you want special-characters?");
+  var pwNumeric = confirm("Do you want numbers?");
 };
 
 //What happens when you confirm these cases?
+if (pwLowerCase === true) {
+
+}
+
+if (pwUpperCase === true) {
+
+}
+
+if (pwSpecial === true) {
+
+}
+
+if (pwNumeric === true) {
+
+}
+
+// ...
+
+if (pwLowerCase && pwUpperCase === true) {
+
+}
+
+if (pwLowerCase && pwSpecial === true) {
+
+}
+
+if (pwUpperCase && pwSpecial === true) {
+
+}
+
+if (pwLowerCase && pwNumeric === true) {
+
+}
+
+if (pwUpperCase && pwNumeric === true) {
+
+}
+
+if (pwSpecial && pwNumeric === true) {
+
+}
+// ...
+if (pwLowerCase && pwUpperCase && pwSpecial === true) {
+
+}
+
+if (pwLowerCase && pwUpperCase && pwNumeric === true) {
+
+}
+
+if (pwLowerCase && pwNumeric && pwSpecial == true) {
+
+}
+
+if (pwUpperCase && pwSpecial && pwNumeric === true) {
+
+}
+// ...
+if (pwUpperCase && pwSpecial && pwNumeric && pwLowerCase === true) {
+
+}
 
 //loop section
 for (var i = 0; i < pwLength; i++) {
