@@ -62,6 +62,13 @@ if (pwLength < 8 || pwLength > 128) {
   var pwSpecial = confirm("Do you want special-characters?");
 };
 
+//What happens when you confirm these cases?
+
+//loop section
+for (var i = 0; i < pwLength; i++) {
+  //looping through arrays with password choices
+};
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
