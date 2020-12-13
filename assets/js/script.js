@@ -85,7 +85,7 @@ var pwUpperCase = "";
 var pwSpecial = "";
 var pwNumeric = "";
 
-var userChoice = "";
+var passInput = "";
 
 var password = [];
 
@@ -106,82 +106,60 @@ function generatePassword() {
   if ((!pwLowerCase && !pwUpperCase && !pwSpecial && !pwNumeric) == true) {
     alert("At least one character type should be selected.");
   }
-
-  // ... all
-  else if ((pwUpperCase && pwSpecial && pwNumeric && pwLowerCase) === true) {
-    alert("all are true");
-    userChoice = (lowerCase() + upperCase() + symbolCase() + numericCase());
-  }
-
-  // ... 3
-  else if (pwLowerCase && pwUpperCase && pwSpecial === true) {
-    userChoice = (lowerCase() + upperCase() + symbolCase());
-  } else if (pwLowerCase && pwUpperCase && pwNumeric === true) {
-    userChoice = (lowerCase() + upperCase() + numericCase());
-  } else if (pwLowerCase && pwNumeric && pwSpecial == true) {
-    userChoice = (lowerCase() + numericCase() + symbolCase());
-  } else if (pwUpperCase && pwSpecial && pwNumeric === true) {
-    userChoice = (upperCase() + symbolCase() + numericCase());
-  }
-
-  // ... 2
-  else if (pwLowerCase && pwUpperCase === true) {
-    userChoice = (lowerCase() + upperCase());
-  } else if (pwLowerCase && pwSpecial === true) {
-    userChoice = (lowerCase() + symbolCase());
-  } else if (pwUpperCase && pwSpecial === true) {
-    userChoice = (upperCase() + symbolCase());
-  } else if (pwLowerCase && pwNumeric === true) {
-    userChoice = (lowerCase() + numericCase());
-  } else if (pwUpperCase && pwNumeric === true) {
-    userChoice = (upperCase() + numericCase());
-  } else if (pwSpecial && pwNumeric === true) {
-    userChoice = (symbolCase() + numericCase());
-  }
-
-  // ... 1
-  else if (pwLowerCase === true) {
-    userChoice = lowerCase();
-  } else if (pwUpperCase === true) {
-    userChoice = upperCase();
-  } else if (pwSpecial === true) {
-    userChoice = symbolCase();
-  } else if (pwNumeric === true) {
-    userChoice = numericCase();
-    alert("pwNumeric true");
-  }
   //loop section
-  for (var i = 0; i < pwLength; i++) {
-    //looping through functions (not sure how to do yet), and then saves value to password var
-    password.push(userChoice);
-  };
-  console.log(userChoice);
+  for (var i = 0; i < pwLength; i) {
+    if (pwLowerCase === true) {
+      password += (lowerCase());
+      i++;
+    }
+    if (pwUpperCase === true) {
+      password += (upperCase());
+      i++;
+    }
+    if (pwNumeric === true) {
+      password += (numericCase());
+      i++;
+    }
+    if (pwSpecial === true) {
+      password += (symbolCase());
+      i++;
+    }
+  }
   console.log(password);
+
 }; //end of generatePassword function
 
 //Functions for maths
 function upperCase() {
-  return pwLettersUpperArr[Math.floor(Math.random() * pwLettersUpperArr.length)];
+  var singleChar = pwLettersUpperArr[Math.floor(Math.random() * pwLettersUpperArr.length)];
+  console.log(singleChar)
+  return singleChar;
 }
 
 function lowerCase() {
-  return pwLettersArr[Math.floor(Math.random() * pwLettersArr.length)];
+  var singleChar = pwLettersArr[Math.floor(Math.random() * pwLettersArr.length)];
+  console.log(singleChar)
+  return singleChar;
 }
 
 function symbolCase() {
-  return pwSpecialArr[Math.floor(Math.random() * pwSpecialArr.length)];
+  var singleChar = pwSpecialArr[Math.floor(Math.random() * pwSpecialArr.length)];
+  console.log(singleChar)
+  return singleChar;
 }
 
 function numericCase() {
-  return pwNumericArr[Math.floor(Math.random() * pwNumericArr.length)];
+  var singleChar = pwNumericArr[Math.floor(Math.random() * pwNumericArr.length)];
+  console.log(singleChar)
+  return singleChar;
 }
-
 // Write password to the #password input ***** must implement generatePassword function
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
+  return;
 }
 
 // Add event listener to generate button
