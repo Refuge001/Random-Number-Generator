@@ -1,4 +1,4 @@
-# Random-Number-Generator
+# Random Number Generator
 ## Random Number Generator Capabilities
 * Capable of creating a password between 8 and 128 characters.
 * Allows you to customize your password with the use of case-sensitive characters, numbers, and special characters.
