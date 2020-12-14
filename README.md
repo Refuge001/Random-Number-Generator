@@ -21,4 +21,4 @@
 
 #### To check it all out, click the link above, and if you'd like to contribute, send me your ideas at uwill08@gmail.com.
 
-### Special thanks to everone in the study group and to Tony specifically for helping me with out with the loop!
+### Special thanks to everone in the work group and to Tony specifically for helping me out with the loop!

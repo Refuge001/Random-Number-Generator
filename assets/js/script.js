@@ -2,62 +2,6 @@
 var generateBtn = document.querySelector("#generate");
 
 //Arrays
-const pwLettersArr = [
-  "q",
-  "w",
-  "e",
-  "r",
-  "t",
-  "y",
-  "u",
-  "i",
-  "o",
-  "p",
-  "a",
-  "s",
-  "d",
-  "f",
-  "g",
-  "h",
-  "j",
-  "k",
-  "l",
-  "z",
-  "x",
-  "c",
-  "v",
-  "b",
-  "n",
-  "m",
-];
-const pwLettersUpperArr = [
-  "A",
-  "B",
-  "C",
-  "D",
-  "E",
-  "F",
-  "G",
-  "H",
-  "I",
-  "J",
-  "K",
-  "L",
-  "M",
-  "N",
-  "O",
-  "P",
-  "Q",
-  "R",
-  "S",
-  "T",
-  "U",
-  "V",
-  "W",
-  "X",
-  "Y",
-  "Z",
-];
 const pwSpecialArr = [
   "!",
   "@",
@@ -88,7 +32,6 @@ const pwSpecialArr = [
   "\>",
   "\?"
 ];
-const pwNumericArr = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 //Variables
 var pwLowerCase = "";
 var pwUpperCase = "";
@@ -137,12 +80,12 @@ function generatePassword() {
 
 //Functions for character selection
 function upperCase() {
-  var singleChar = pwLettersUpperArr[Math.floor(Math.random() * pwLettersUpperArr.length)];
+  var singleChar = String.fromCharCode(Math.floor(Math.random() * 26) + 65);;
   return singleChar;
 }
 
 function lowerCase() {
-  var singleChar = pwLettersArr[Math.floor(Math.random() * pwLettersArr.length)];
+  var singleChar = String.fromCharCode(Math.floor(Math.random() * 26) + 97);
   return singleChar;
 }
 
@@ -152,7 +95,7 @@ function symbolCase() {
 }
 
 function numericCase() {
-  var singleChar = pwNumericArr[Math.floor(Math.random() * pwNumericArr.length)];
+  var singleChar = String.fromCharCode(Math.floor(Math.random() * 10) + 48);;
   return singleChar;
 }
 // Write password to the #password input ***** must implement generatePassword function
