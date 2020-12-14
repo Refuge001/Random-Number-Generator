@@ -130,6 +130,7 @@ function generatePassword() {
       passwordInput += (symbolCase());
       i++;
     }
+    passwordInput = passwordInput.slice(0, pwLength);
   }
 
 }; //end of generatePassword function
@@ -161,6 +162,5 @@ function writePassword() {
   passwordText.value = passwordInput;
   return;
 }
-
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
