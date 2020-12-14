@@ -137,7 +137,7 @@ function generatePassword() {
     passwordInput = passwordInput.slice(0, pwLength);
   }
 
-}; //end of generatePassword function
+} //end of generatePassword function
 
 //Functions for character selection
 function upperCase() {
