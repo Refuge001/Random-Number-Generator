@@ -1,5 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+
+//Arrays
 const pwLettersArr = [
   "q",
   "w",
@@ -87,20 +89,21 @@ const pwSpecialArr = [
   "\?"
 ];
 const pwNumericArr = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
-
+//Variables
 var pwLowerCase = "";
 var pwUpperCase = "";
 var pwSpecial = "";
 var pwNumeric = "";
-
 var passwordInput = [];
 
+//Password generation function
 function generatePassword() {
   var pwLength = prompt(
     "How many characters do you want? (At least 8 characters and no more than 128 characters)"
   );
   if (pwLength < 8 || pwLength > 128) {
     alert("You didn't select the proper range of characters");
+    return generatePassword();
   } else {
     pwLowerCase = confirm("Do you want lowercase characters?");
     pwUpperCase = confirm("Do you want uppercase characters?");
@@ -108,9 +111,10 @@ function generatePassword() {
     pwNumeric = confirm("Do you want numbers?");
   }
 
-  //What happens when you confirm these cases?
+  //Alert if all options bypassed
   if ((!pwLowerCase && !pwUpperCase && !pwSpecial && !pwNumeric) == true) {
     alert("At least one character type should be selected.");
+    return generatePassword();
   }
   //loop section
   for (var i = 0; i < pwLength; i) {
@@ -135,7 +139,7 @@ function generatePassword() {
 
 }; //end of generatePassword function
 
-//Functions for maths
+//Functions for character selection
 function upperCase() {
   var singleChar = pwLettersUpperArr[Math.floor(Math.random() * pwLettersUpperArr.length)];
   return singleChar;
