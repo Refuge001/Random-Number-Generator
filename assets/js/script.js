@@ -117,22 +117,18 @@ function generatePassword() {
     return generatePassword();
   }
   //loop section
-  for (var i = 0; i < pwLength; i) {
+  for (var i = 0; i < pwLength; i++) {
     if (pwLowerCase === true) {
       passwordInput += (lowerCase());
-      i++;
     }
     if (pwUpperCase === true) {
       passwordInput += (upperCase());
-      i++;
     }
     if (pwNumeric === true) {
       passwordInput += (numericCase());
-      i++;
     }
     if (pwSpecial === true) {
       passwordInput += (symbolCase());
-      i++;
     }
     passwordInput = passwordInput.slice(0, pwLength);
   }
