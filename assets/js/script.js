@@ -37,10 +37,11 @@ var pwLowerCase = "";
 var pwUpperCase = "";
 var pwSpecial = "";
 var pwNumeric = "";
-var passwordInput = [];
+var passwordInput = "";
 
 //Password generation function
 function generatePassword() {
+  passwordInput = "";
   var pwLength = prompt(
     "How many characters do you want? (At least 8 characters and no more than 128 characters)"
   );
