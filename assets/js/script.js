@@ -51,7 +51,7 @@ function generatePassword() {
   } else {
     pwLowerCase = confirm("Do you want lowercase characters?");
     pwUpperCase = confirm("Do you want uppercase characters?");
-    pwSpecial = confirm("Do you want special-characters?");
+    pwSpecial = confirm("Do you want special characters?");
     pwNumeric = confirm("Do you want numbers?");
   }
 
