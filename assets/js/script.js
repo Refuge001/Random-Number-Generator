@@ -37,11 +37,11 @@ var pwLowerCase = "";
 var pwUpperCase = "";
 var pwSpecial = "";
 var pwNumeric = "";
-var passwordInput = "";
+var password = "";
 
 //Password generation function
 function generatePassword() {
-  passwordInput = "";
+  password = "";
   var pwLength = prompt(
     "How many characters do you want? (At least 8 characters and no more than 128 characters)"
   );
@@ -63,20 +63,20 @@ function generatePassword() {
   //loop section
   for (var i = 0; i < pwLength; i++) {
     if (pwLowerCase === true) {
-      passwordInput += (lowerCase());
+      password += (lowerCase());
     }
     if (pwUpperCase === true) {
-      passwordInput += (upperCase());
+      password += (upperCase());
     }
     if (pwNumeric === true) {
-      passwordInput += (numericCase());
+      password += (numericCase());
     }
     if (pwSpecial === true) {
-      passwordInput += (symbolCase());
+      password += (symbolCase());
     }
-    passwordInput = passwordInput.slice(0, pwLength);
+    password = password.slice(0, pwLength);
   }
-  return passwordInput;
+  return password; // It took me a long time to get here. Tony was a big help, Tish you were a big help. This return is the holy grail.
 } //end of generatePassword function
 
 //Functions for character selection
@@ -101,9 +101,9 @@ function numericCase() {
 }
 // Write password to the #password input ***** must implement generatePassword function
 function writePassword() {
-  passwordInput = generatePassword();
+  password = generatePassword();
   var passwordText = document.querySelector("#password");
-  passwordText.value = passwordInput;
+  passwordText.value = password;
   return;
 }
 // Add event listener to generate button
