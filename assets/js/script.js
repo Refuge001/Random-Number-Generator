@@ -75,7 +75,7 @@ function generatePassword() {
     }
     passwordInput = passwordInput.slice(0, pwLength);
   }
-
+  return passwordInput;
 } //end of generatePassword function
 
 //Functions for character selection
@@ -95,12 +95,12 @@ function symbolCase() {
 }
 
 function numericCase() {
-  var singleChar = String.fromCharCode(Math.floor(Math.random() * 10) + 48);;
+  var singleChar = String.fromCharCode(Math.floor(Math.random() * 10) + 48);
   return singleChar;
 }
 // Write password to the #password input ***** must implement generatePassword function
 function writePassword() {
-  generatePassword();
+  passwordInput = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = passwordInput;
   return;
