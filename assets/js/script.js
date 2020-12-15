@@ -81,7 +81,7 @@ function generatePassword() {
 
 //Functions for character selection
 function upperCase() {
-  var singleChar = String.fromCharCode(Math.floor(Math.random() * 26) + 65);;
+  var singleChar = String.fromCharCode(Math.floor(Math.random() * 26) + 65);
   return singleChar;
 }
 
